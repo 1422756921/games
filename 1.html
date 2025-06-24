@@ -1,0 +1,68 @@
+  
+<div id=dd
+style="Z-INDEX: 1; WIDTH: 100px; POSITION: absolute; HEIGHT: 132px"> <a href=""><img src="./huaji.gif" width="128" height="128" border="0" alt="青云网络"></a></div>
+
+<script language=JavaScript>
+<!-- Begin
+//more javascript from http://cfan.net.cn
+var xPos = 200; // 起始横向位置(从左算起，单位象素)
+var yPos = document.body.clientHeight; // 页面本身高度
+var step = 1;
+var delay = 1; // 速度，值越大速度越慢
+var height = 0;
+var Hoffset = 0;
+var Woffset = 0;
+var yon = 0;
+var xon = 0;
+var pause = true;
+var interval;
+dd.style.top = yPos;
+function changePos() {
+width = document.body.clientWidth; // 判断浏览器窗口的宽度
+height = document.body.clientHeight; // 判断浏览器窗口的高度
+Hoffset = dd.offsetHeight;
+Woffset = dd.offsetWidth;
+dd.style.left = xPos + document.body.scrollLeft;
+dd.style.top = yPos + document.body.scrollTop;
+if (yon) {
+yPos = yPos + step;
+}
+else {
+yPos = yPos - step;
+}
+if (yPos < 0) {
+yon = 1;
+yPos = 0;
+}
+if (yPos >= (height - Hoffset)) {
+yon = 0;
+yPos = (height - Hoffset);
+}
+if (xon) {
+xPos = xPos + step;
+}
+else {
+xPos = xPos - step;
+}
+if (xPos < 0) {
+xon = 1;
+xPos = 0;
+}
+if (xPos >= (width - Woffset)) {
+xon = 0;
+xPos = (width - Woffset);
+}
+}
+function start() {
+dd.visibility = "visible";
+interval = setInterval('changePos()', delay);
+}
+function pause_resume() {
+if(pause) {clearInterval(interval);pause = false;}
+else {interval = setInterval('changePos()',delay);pause = true;}
+}
+start();
+// End -->
+
+</script> 
+
