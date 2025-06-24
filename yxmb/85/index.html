@@ -1,0 +1,95 @@
+<!--
+    作者：布鲁诺·西蒙
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遥控小车</title>
+    <meta name="description" content="遥控小车">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta itemprop="image" content="/favicon/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/logo.png">
+    <meta name="apple-mobile-web-app-title" content="遥控小车">
+    <meta name="application-name" content="遥控小车">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<canvas class="canvas js-canvas"></canvas>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="./static/layer/layer.js"></script>
+<script type="text/javascript" src="./static/js/main.js"></script>
+<script>
+    layer.config({extend: 'https://ce.luyuw.top/ce/tu/static/layer/theme/haytoycar/style.css'}); /** 设置一个layer弹窗组件的主题 **/
+    var haydata = {
+        layoutcolor: [
+            "#f5883c", //左上角背景颜色(不建议修改)
+            "#ff9043", //左下角背景颜色(不建议修改)
+            "#fccf92", //右上角背景颜色(不建议修改)
+            "#f5aa58", //右下角背景颜色(不建议修改)
+        ],
+        projectlist: [
+            {
+                name: "测试项目", /** 项目名称 **/
+                image: [
+                    "./static/images/1.jpg", /** 项目图片 **/
+                    "./static/images/bj.jpg"
+                ],
+                floor: "./static/images/test.png", /** 地板图，用于显示描述文字与按钮文字 **/
+                button: {
+                    event: "click",  /** 打开的点击事件，urljump:新窗口打开链接/other:执行function函数 **/
+                    href: "https://www.qinglin.co", /** 需要跳转的链接，只有event变量为urljump时才会执行 **/
+                    function: function(){
+                        /** 需要执行的函数代码，只有event变量不为urljump时才会执行 **/
+                        layer.msg("青云个人主页  www.qinglin.co");
+                    },
+                    x: -4.8, /** 按钮的x轴位置，根据你图片中的按钮位置跳转 **/
+                    y: -3, /** 按钮的y轴位置，根据你图片中的按钮位置跳转 **/
+                    halfExtents: {
+                        x: 3.2, /** 聚焦按钮时的特效显示的x轴位置 **/
+                        y: 1.5 /** 聚焦按钮时的特效显示的y轴位置 **/
+                    }
+                },
+                distinctions: [{
+                    type: "fwa", /** 一个小的3Dlogo模型 **/
+                    x: 3.95, /** 显示的x轴位置 **/
+                    y: 4.15 /** 显示的y轴位置 **/
+                },
+                {
+                    type: "awwwards",
+                    x: 5.6,
+                    y: 4.15
+                },
+                {
+                    type: "cssda",
+                    x: 6.9,
+                    y: 4.15
+                },
+                {
+                    type: "fwa",
+                    x: 9.1,
+                    y: 4.15
+                }]
+            }
+        ],
+        informationlist: [
+            /** 社交账户 **/
+            {
+                href: "https://www.qinglin.co", /** 链接**/
+                label: "./static/images/tp.png" /** 地板图 **/
+            },
+            {
+                href: "https://www.qinglin.co",
+                label: "./static/images/tp.png"
+            }
+            ,
+            {
+                href: "https://www.qinglin.co",
+                label: "./static/images/tp.png"
+            }
+        ]
+    };
+</script>
+</body>
+</html>
